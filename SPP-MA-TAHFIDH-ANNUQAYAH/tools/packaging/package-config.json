@@ -1,0 +1,40 @@
+{
+  "name": "SPP-MA-TAHFIDH-ANNUQAYAH",
+  "version": "1.0.0",
+  "description": "Aplikasi pembayaran SPP untuk MA TAHFIDH ANNUQAYAH",
+  "author": "Your Name",
+  "license": "MIT",
+  "platforms": [
+    "win32"
+  ],
+  "architecture": [
+    "x86",
+    "x64"
+  ],
+  "output": {
+    "directory": "dist",
+    "format": "exe"
+  },
+  "build": {
+    "appId": "com.annuqayah.spp",
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ]
+    }
+  },
+  "files": [
+    "src/SPP.App/bin/Release/**/*",
+    "src/SPP.Core/bin/Release/**/*",
+    "src/SPP.Data/bin/Release/**/*"
+  ],
+  "scripts": {
+    "postinstall": "npm run build"
+  }
+}
